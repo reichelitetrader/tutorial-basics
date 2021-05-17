@@ -1,0 +1,36 @@
+1. Utwórz strukturę klas wg następującego schematu: diagram-piotrek.png
+2. Do wszystkich klas zawierających pola dodaj metody dostępowe (gettery, settery).
+3. Do wszystkich klas zawierających pola dodaj konstruktory (zarówno parametrowe dla wszystkich pól danej klasy jak i bezparametrowe).
+4. Do klasy Pojazd do metody uruchomSilnik() dodaj kod wyświetlający napis “Silnik uruchomiono”.
+5. Do klasy Szynowe dodaj własną metodę uruchomSilnik(), która będzie wyświetlała napis “uruchomiono silnik pojazdu szynowego”.
+6. Do klasy Gąsienicowe dodaj własną metodę uruchomSilnik(), wewnątrz której wywołaj metodę z klasy nadrzędnej (Pojazd), następnie wyświetl tekst “Jest to pojazd gąsienicowy”.
+7. Do klasy Kołowe dodaj metodę uruchomSilnik(String rodzajSilnika) która wypisze rodzaj uruchomionego silnika na podstawie przesłanej wartości do metody (np. uruchomiono silnik benzynowy, uruchomiono silnik elektryczny itp).
+8. Utwórz trzy obiekty klasy Golf nadając im wartości początkowe:
+a. rokProdukcji: 2019,   rodzajSilnika: elektryczny,  kolor: biały,  masa: 1200 kg:  rozmiarOpony: 195/70 R15, ilość osób: 4.
+b. rokProdukcji: 2012,   rodzajSilnika: benzynowy,  kolor: czerwony,  masa: 1500 kg:  rozmiarOpony: 185/70 R16, ilość osób: 5.
+c. rokProdukcji: 2009,   rodzajSilnika: diesel,  kolor: niebieski,  masa: 1800 kg:  rozmiarOpony: 195/80 R17, ilość osób: 5.
+9. Do klasy Sedan dodaj pola: model, symbol
+10. W klasie Pociąg dodaj pole statyczne o nazwie właściciel, przechowujące wartość “P.K.P.”
+11. Dodaj do klasy Octavia słowo final, sprawdź co się stanie w sytuacji utworzenia nowej klasy, która dziedziczy po klasie Octavia.
+12. Dodaj do metody uruchomSilnik() w klasie Gąsienicowe słowo final, sprawdź co się stanie gdy dodasz metodę uruchomSilnik() do klasy Czołg.
+13. Sprawdź wpływ dodania słowa private przed klasą Pojazd.
+14. Sprawdź zachowanie programu w sytuacji gdy klasa Pojazd nie będzie posiadała informacji o modyfikatorze dostępu(modyfikator pusty).
+-- 15. Przypisz do klas wspólny pakiet (package) sprawdź zachowanie programu w sytuacji gdy klasa Pojazd nie będzie
+posiadała informacji o modyfikatorze dostępu (modyfikator pusty)
+
+-Modyfikator final - klasa nie może być dziedziczona przez inne klasy
+-Modyfikator abstract -nie można użyć tej klasy do stworzenia obiektów. Aby uzyskać dostęp do elementów klasy
+abstrakcyjnej, musimy rozszerzyć tą klasę inną klasą (nieabstrakcyjną).
+
+-Modyfikator final - pole nie może być zmodyfikowane oraz nadpisane, a metoda nie może być przesłonięta
+-Modyfikator static - pola i metody należą do klasy, a nie do obiektu.
+-Modyfikator abstract - może być używany tylko w klasie abstrakcyjnej i używany tylko w metodach.
+
+
+- static methods z regular methods
+- final na metodach
+- wewnetrzna klasa private
+  private class Test {
+
+  }
+- protected class - do sprawdzenia

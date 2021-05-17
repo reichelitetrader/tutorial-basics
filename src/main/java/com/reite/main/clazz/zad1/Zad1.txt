@@ -1,0 +1,7 @@
+1. Zaproponuj temat, który nadawałby się na utworzenie klasy. Utwórz klasę posiadającą przynajmniej 6 pół różnego typu.
+2. Do klasy utwórz przynajmniej 3 konstruktory.
+3. Skróć zapis przynajmniej jednego konstruktora by wywoływał inny konstruktor przez this
+3. Utwórz metody dostępowe (getter, setter) dla pół klasy.
+4. Utwórz 6 obiektów, wywołując różne konstruktory (nie zawsze znamy wartości pól obiektów w momencie ich tworzenia).
+5. Ustaw za pomocą settera wartości pól, które nie były znane w momencie wywoływania konstruktora.
+6. Utwórz zmienną, która przyjmie wartość przechowywaną przez pole obiektu.

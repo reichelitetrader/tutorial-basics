@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class MainAL {
   public static void main(String[] args) {
     int counter = 0, counterBumper = 0, counterGlass = 0, counterMirror = 0, counterWiper = 0;
+    boolean fault = false;
     List<Object> parts = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
     while (true) {
       System.out.print("Podaj typ elementu: ");
-      String type = scanner.nextLine();
+      String type = new Scanner(System.in).nextLine();
       switch (type.toLowerCase()) {
         case "zderzak":
           if (counterBumper <= 3) {
@@ -21,11 +22,13 @@ public class Main {
             int swapIndex = scanner.nextInt();
             if (index == swapIndex) {
               System.err.println("Podane indeksy sa rowne");
+              fault = true;
               break;
             }
             addBumper(parts, scanner, index != -1 ? index : null, swapIndex != -1 ? swapIndex : null);
             counterBumper++;
-          }
+          } else
+            fault = true;
           break;
         case "szyba":
           if (counterMirror <= 3) {
@@ -35,11 +38,13 @@ public class Main {
             int swapIndex = scanner.nextInt();
             if (index == swapIndex) {
               System.err.println("Podane indeksy sa rowne");
+              fault = true;
               break;
             }
             addGlass(parts, scanner, index != -1 ? index : null, swapIndex != -1 ? swapIndex : null);
             counterMirror++;
-          }
+          } else
+            fault = true;
           break;
         case "lusterko":
           if (counterGlass <= 3) {
@@ -49,11 +54,13 @@ public class Main {
             int swapIndex = scanner.nextInt();
             if (index == swapIndex) {
               System.err.println("Podane indeksy sa rowne");
+              fault = true;
               break;
             }
             addMirror(parts, scanner, index != -1 ? index : null, swapIndex != -1 ? swapIndex : null);
             counterGlass++;
-          }
+          } else
+            fault = true;
           break;
         case "wycieraczka":
           if (counterWiper <= 3) {
@@ -63,18 +70,22 @@ public class Main {
             int swapIndex = scanner.nextInt();
             if (index == swapIndex) {
               System.err.println("Podane indeksy sa rowne");
+              fault = true;
               break;
             }
             addWiper(parts, scanner, index != -1 ? index : null, swapIndex != -1 ? swapIndex : null);
             counterWiper++;
-          }
+          } else
+            fault = true;
           break;
         default:
           System.err.println("Brak tego typu czesci!");
           break;
       }
-      System.out.println("Dodano " + (counter + 1) + " elementow");
-      counter++;
+      if (!fault) {
+        System.out.println("Dodano " + (counter + 1) + " elementow");
+        counter++;
+      }
       if (counter == 15)
         break;
     }
@@ -82,7 +93,7 @@ public class Main {
 
   private static int addBumper(List<Object> parts, Scanner scanner, Integer index, Integer swapIndex) {
     System.out.print("Podaj nazwe: ");
-    String bumperName = scanner.nextLine();
+    String bumperName = new Scanner(System.in).nextLine();
     System.out.print("Przednia [true/false]? ");
     boolean bumperIsFront = scanner.nextBoolean();
     Bumper bumper = new Bumper(bumperName, bumperIsFront);
@@ -99,7 +110,7 @@ public class Main {
 
   private static int addGlass(List<Object> parts, Scanner scanner, Integer index, Integer swapIndex) {
     System.out.print("Podaj nazwe: ");
-    String glassName = scanner.nextLine();
+    String glassName = new Scanner(System.in).nextLine();
     System.out.print("Podaj cene: ");
     double glassCost = scanner.nextDouble();
     Glass glass = new Glass(glassName, glassCost);
@@ -116,7 +127,7 @@ public class Main {
 
   private static int addMirror(List<Object> parts, Scanner scanner, Integer index, Integer swapIndex) {
     System.out.print("Podaj nazwe: ");
-    String mirrorName = scanner.nextLine();
+    String mirrorName = new Scanner(System.in).nextLine();
     System.out.print("Prawe [true/false]? ");
     boolean mirrorIsRight = scanner.nextBoolean();
     Mirror mirror = new Mirror(mirrorName, mirrorIsRight);
@@ -133,7 +144,7 @@ public class Main {
 
   private static int addWiper(List<Object> parts, Scanner scanner, Integer index, Integer swapIndex) {
     System.out.print("Podaj nazwe: ");
-    String wiperName = scanner.nextLine();
+    String wiperName = new Scanner(System.in).nextLine();
     System.out.print("Przedni [true/false]? ");
     boolean wiperIsFront = scanner.nextBoolean();
     Wiper wiper = new Wiper(wiperName, wiperIsFront);
